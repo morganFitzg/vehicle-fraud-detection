@@ -50,6 +50,21 @@ Shap values for the final model show similar feature importances as the best cat
 
 <img src="shap_summary.png" title="Final Model Shap Summary" />
 
+## Example Cost Analysis ##
+
+To give a rough idea of how a company could choose an acceptable FNR, 
+we'll assume the following:
+
+>-Company receives 4 million claims a year <br>(Allstate has ~16 million customers, assume 12 million have car insurance, <br>Americans file a claim once every three years on average)<br>
+
+>-Fraudulent claims cost 2000 dollars on average<br>
+
+>-Try various costs for the claim investigation process
+
+This plot shows us that the usefulness of this model depends on the average cost of fraud and the cost to investigate claims.  If the cost to investigate is too high compared to the average cost of fraud, it may not save the company money to flag fraud.  Lower costs to investigate in relation to cost of fraud tend to have monetary benefit even if large percentages of actual fraud are missed. This would have to be evaluated carefully before implementation.
+
+<img src="cost_curve.png" />
+
 ## Conclusions ##
 
 The model produced in this project can identify approximately 90% of fraudulent claims while flagging only 36% of non-fraudulent claims as potential fraud.
